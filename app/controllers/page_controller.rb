@@ -10,7 +10,6 @@ class PageController < ApplicationController
   	@vanity = Vanity.new(vanity_params)
   	
     if @vanity.save
-      binding.pry
   		flash[:success] = "Create vanity #{web_name}/#{@vanity.vanity_url} has beed succeded"
   		redirect_to root_path
   	else

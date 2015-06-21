@@ -4,6 +4,8 @@ gem "twitter-bootstrap-rails"
 
 gem 'kaminari'
 
+gem 'mysql2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -53,3 +55,6 @@ group :test do
   gem 'minitest-reporters'
 end
 
+group :production do
+	gem 'unicorn'
+end
