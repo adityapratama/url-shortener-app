@@ -1,0 +1,22 @@
+<table class="table">
+	<thead>
+			<tr>
+				<th>Vanity Url</th>
+				<th>Destination Url</th>
+				<th>Click</th>
+				<th></th>
+			</tr>
+	</thead>
+	<tbody>
+		<% @vanities.each do |vanity| %>
+			<tr>
+				<td><%= link_to "#{web_name}/#{vanity.vanity_url}" , "/#{vanity.vanity_url}" %></td>
+				<td><%= link_to vanity.destination_url.sub(/^https?\:\/\//, ''), vanity.destination_url %></td>
+				<td><%= vanity.click %></td>
+				<td><%= link_to 'API', "/api/#{vanity.vanity_url}/statistic.json" %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= paginate @vanities %>

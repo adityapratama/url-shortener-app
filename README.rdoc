@@ -1,0 +1,10 @@
+== Url Shortener App
+
+
+Running App development
+
+* Clone repository
+
+* cd url-shortener-app
+
+* rails s

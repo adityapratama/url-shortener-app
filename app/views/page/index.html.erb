@@ -1,0 +1,26 @@
+<%= form_for(@vanity, :html => {:class => "form-inline"} ) do |f|%>
+	<% if @vanity.errors.any? %>
+		<div id="error_explanation">
+			<div class="alert alert-danger">
+				<ul>
+			    <% @vanity.errors.full_messages.each do |m| %>
+			      <li><%= m %></li>
+			    <% end %>
+		    </ul>
+			</div>
+		</div>
+	<% end %>
+
+	<div class="jumbotron">
+		<div class="form-group">
+			<%= f.label :vanity_url, "#{web_name}/" %>
+			<%= f.text_field :vanity_url, :class => "form-control input-lg", :placeholder => "Enter vanity/sort Url" %>
+		</div>
+		<div class="form-group">
+			<%= f.text_field :destination_url, :class => "form-control input-lg", :placeholder => "Enter destination Url" %>
+		</div>
+		<%= f.submit "Create", :class => "btn btn-success btn-lg" %>
+		<p>Click for another <%= link_to 'Vanity Url', vanity_list_path %></p>
+	</div>
+	
+<% end %>

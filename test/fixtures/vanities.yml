@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vanity_url: MyString1
+  destination_url: MyString
+
+two:
+  vanity_url: MyString2
+  destination_url: MyString
