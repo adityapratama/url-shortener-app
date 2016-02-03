@@ -13,17 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20150619022503) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "vanities", force: :cascade do |t|
     t.string   "vanity_url",      limit: 50
-    t.string   "destination_url", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "destination_url"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "vanities", ["vanity_url"], name: "index_vanities_on_vanity_url", unique: true, using: :btree
 
   create_table "vanity_trackings", force: :cascade do |t|
-    t.integer  "vanity_id",  limit: 4
+    t.integer  "vanity_id"
     t.string   "ip_address", limit: 50
     t.string   "user_agent", limit: 250
     t.datetime "created_at",             null: false
