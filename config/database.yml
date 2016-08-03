@@ -5,10 +5,10 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: 10
-  username: root
-  password: root
+  username: adityapratama
+  password:
   #socket: /tmp/mysql.sock
   reaping_frequency: 15
   reconnect: true
@@ -22,7 +22,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: url_shortener_test
 
 production:
   <<: *default
